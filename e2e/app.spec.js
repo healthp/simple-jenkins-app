@@ -5,13 +5,13 @@ test('has title', async ({ page }) => {
   await page.goto('/');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Simple Jenkins App/);
+  await expect(page).toHaveTitle('Simple Jenkins App');
 });
 
 test('has Jenkins in the body', async ({ page }) => {
   await page.goto('/');
 
-  const isVisible = await page.locator('a:has-text("Simple Jenkins App")').isVisible();
+  const isVisible = await page.locator('a:has-text("Simple Jenkins")').isVisible();
   expect(isVisible).toBeTruthy();
 });
 
